@@ -1,0 +1,12 @@
+
+ARG ALPINE_TAG=3.9
+ARG PARSE_VERSION=3.3.0
+ARG PARSE_REPO_URI=https://github.com/parse-community/parse-server
+
+FROM alpine:${ALPINE_TAG} AS GET_CODE
+ARG PARSE_VERSION
+ARG PARSE_REPO_URI
+RUN wget ${PARSE_REPO_URI}/archive/${PARSE_VERSION}.zip
+RUN unzip ${PARSE_VERSION}.zip
+
+FROM alpine:${ALPINE_TAG} AS BUILD_LIB

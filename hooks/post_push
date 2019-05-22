@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "$IMAGE_NAME $DOCKER_REPO:$SOURCE_COMMIT"
